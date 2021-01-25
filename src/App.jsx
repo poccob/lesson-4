@@ -23,7 +23,7 @@ function App() {
 
   const addTasks = (text) => {
     if (text !== '') {
-      const id = tasks.slice(-1)[0].id + 1;
+      const id = !tasks.length ? 1 : tasks.slice(-1)[0].id + 1;
       const completed = false;
       const color = activeColor;
       setTasks([...tasks, { id, text, completed, color }]);
